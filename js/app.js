@@ -20,6 +20,13 @@ function click_button(event)
     }
 }
 
+function reset_counter(event)
+{
+    Cookies.remove(`click_count_one`);
+    Cookies.remove(`click_count_two`);
+    Cookies.remove(`click_count_three`);
+}
+
 let click_count_one = 0;
 let click_count_two = 0;
 let click_count_three = 0;
@@ -63,3 +70,5 @@ for (let i = 0; i < btns.length; i++)
     btns[i].addEventListener(`click`, click_button);
 }
 
+let restart = document.querySelector(`#restart`);
+restart.addEventListener(`click`, reset_counter);
